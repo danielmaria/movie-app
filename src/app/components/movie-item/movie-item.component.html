@@ -1,0 +1,14 @@
+<ng-container *ngIf="item">
+  <a class="movie-item" [routerLink]="'/movie/' + item.id">
+    <div class="movie-item-rating">
+      <i class="app-icon">star</i>
+      <span>{{ item.vote_average }}</span
+      >/10
+    </div>
+    <div class="movie-item-image">
+      <img *ngIf="item.backdrop_path" [src]="imageSize.medium + item.backdrop_path" alt="">
+      <img *ngIf="!item.backdrop_path" src="assets/images/no-photo-horizontal.png" alt="">
+    </div>
+    <div class="movie-item-title">{{ item.title }}</div>
+  </a>
+</ng-container>
